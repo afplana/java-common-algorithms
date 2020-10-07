@@ -15,8 +15,14 @@ public class Prime {
     }
 
     public static void main(String[] args) {
-        System.out.print("Enter to verify primality: ");
-        int number = new Scanner(System.in).nextInt();
-        System.out.print(verify(number));
+        System.out.print("Enter number to verify primality: ");
+        var scanner = new Scanner(System.in);
+        var number = scanner.nextInt();
+        while (number != 0) {
+            System.out.print(verify(number));
+            System.out.println();
+            System.out.print("Enter number to verify primality: ");
+            number = scanner.nextInt();
+        }
     }
 }

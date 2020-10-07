@@ -45,8 +45,14 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         System.out.print("Enter number up to which Fibonacci series to print: ");
-        int number = new Scanner(System.in).nextInt();
-        System.out.println("Fibonacci series up to " + recursive(number) +" numbers : ");
-        for(int i=1; i<=number; i++){ System.out.print(iterative(i) +" "); }
+        var scanner = new Scanner(System.in);
+        var number = scanner.nextInt();
+        while (number != 0) {
+            System.out.println("Fibonacci series up to " + recursive(number) +" numbers : ");
+            for(int i=1; i<=number; i++){ System.out.print(iterative(i) +" "); }
+            System.out.println();
+            System.out.print("Enter number up to which Fibonacci series to print: ");
+            number = scanner.nextInt();
+        }
     }
 }
